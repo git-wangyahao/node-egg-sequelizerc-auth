@@ -12,7 +12,7 @@ exports.swaggerdoc = {
       description: 'swagger-ui for NAPI document.',   // 接口文档描述。
       version: '1.0.0',   // 接口文档版本。
   },
-  basePath: '/v1',
+  basePath: '/',
   host: "127.0.0.1:7007",
   // schemes: ['http', 'https'], // 配置支持的协议。
   consumes: ['application/json'], // 指定处理请求的提交内容类型（Content-Type），例如application/json, text/html。
@@ -33,7 +33,7 @@ exports.swaggerdoc = {
       //   },
       // },
   },
-  routers: ['/v1'],
+  routers: ['/'],
   enableSecurity: false,  // 是否启用授权，默认 false（不启用）。
   // enableValidate: true,    // 是否启用参数校验，默认 true（启用）。
   routerMap: true,    // 是否启用自动生成路由，默认 true (启用)。

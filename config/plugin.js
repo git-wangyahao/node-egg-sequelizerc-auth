@@ -32,3 +32,18 @@ exports.cors = {
     package: "egg-cors"
 };
 
+// 错误处理
+exports.onerror = {
+    html(err, ctx) {
+        // html hander
+        ctx.body = '<h3>error</h3>';
+        ctx.status = 500;
+    },
+    json(err, ctx) {
+        // json hander
+        ctx.body = { message: 'error' };
+        ctx.status = 500;
+    },
+}
+
+
