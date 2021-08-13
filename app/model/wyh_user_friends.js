@@ -25,6 +25,15 @@ module.exports = app => {
     user_status: {
       type: DataTypes.STRING(20),
       allowNull: false
+    },
+    create_time: {
+      type: DataTypes.TIME,
+      allowNull: true
+    },
+    update_time: {
+      type: DataTypes.TIME,
+      allowNull: true,
+      defaultValue: DataTypes.literal('CURRENT_TIMESTAMP')
     }
   }, {
     tableName: 'wyh_user_friends'

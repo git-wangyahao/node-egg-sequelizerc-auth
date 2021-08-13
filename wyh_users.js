@@ -3,39 +3,55 @@ const moment =  require('moment')
 module.exports = app => {
   const DataTypes = app.Sequelize;
 
-  const Model = app.model.define('wyh_articles', {
-    article_id: {
+  const Model = app.model.define('wyh_users', {
+    user_id: {
       type: DataTypes.BIGINT,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    user_id: {
-      type: DataTypes.BIGINT,
-      allowNull: false
-    },
-    article_title: {
-      type: DataTypes.TEXT,
+    user_ip: {
+      type: DataTypes.STRING(20),
       allowNull: true
     },
-    article_content: {
-      type: DataTypes.TEXT,
+    user_name: {
+      type: DataTypes.STRING(20),
       allowNull: true
     },
-    article_views: {
-      type: DataTypes.BIGINT,
+    user_password: {
+      type: DataTypes.STRING(15),
       allowNull: true
     },
-    article_comment_count: {
-      type: DataTypes.BIGINT,
+    user_email: {
+      type: DataTypes.STRING(30),
       allowNull: true
     },
-    article_date: {
+    user_profile_photo: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    user_level: {
+      type: DataTypes.STRING(20),
+      allowNull: true
+    },
+    user_rights: {
+      type: DataTypes.STRING(20),
+      allowNull: true
+    },
+    user_birthday: {
       type: DataTypes.DATE,
       allowNull: true
     },
-    article_like_count: {
-      type: DataTypes.BIGINT,
+    user_age: {
+      type: DataTypes.INTEGER(4),
+      allowNull: true
+    },
+    user_telephone_number: {
+      type: DataTypes.INTEGER(11),
+      allowNull: true
+    },
+    user_nickname: {
+      type: DataTypes.STRING(20),
       allowNull: true
     },
     create_time: {
@@ -50,7 +66,7 @@ module.exports = app => {
       }
     }
   }, {
-    tableName: 'wyh_articles'
+    tableName: 'wyh_users'
   });
 
   Model.associate = function() {

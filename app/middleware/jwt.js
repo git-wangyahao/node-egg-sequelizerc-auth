@@ -9,9 +9,13 @@ module.exports = options => {
       try {
         // 解码token
         decode = ctx.app.jwt.verify(token, options.secret);
+        
+        ctx.request.header.userInfo = decode
+        console.log("decode",decode)
         await next();
-        console.log(decode);
+    
       } catch (error) {
+        console.log("error",error)
         ctx.status = 401;
         ctx.body = {
           message: 'token已过期',

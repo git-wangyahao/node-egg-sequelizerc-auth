@@ -17,8 +17,7 @@ app/extend/agent.js - 扩展 Agent 类
 9、参数校验处理  需要安装npm i egg-validate --save
 10、集成mysql2
 
-
-<!-- 生成数据库model -->
+  
 https://blog.csdn.net/zhangshuanlai/article/details/106060952
 
 参考文档
@@ -28,15 +27,19 @@ https://github.com/beansmile/egg-swagger-doc
 https://www.jianshu.com/p/d1977d86993a  关联表查询语句
 <!-- SQL文档 -->
 https://github.com/demopark/sequelize-docs-Zh-CN 
+https://www.sequelize.com.cn/
 
 <!-- ORM-sql-方法文档 -->
 https://eggjs.org/zh-cn/basics/extend.html#application
+
 
 https://blog.csdn.net/zhangshuanlai/article/details/106060952
 ctx.validate 校验规则文档
 https://github.com/node-modules/parameter
 https://blog.csdn.net/le_17_4_6/article/details/94611179
 
+egg-swagger-doc 文档
+https://github.com/DG-Wangtao/egg-swagger-doc
 
 
 11、使用 Passport 生态 开发登陆鉴权
@@ -52,3 +55,9 @@ egg-JWT验证用户登陆
 
 
  2021/07/29 搞登陆鉴权 注册账号，修改密码
+
+ 参数校验
+ 你想检验ctx.query的话，那就ctx.validate({ userName: 'string' }, ctx.query);，params就ctx.params。
+
+ VUE 中获取用户的PVUV
+ https://blog.csdn.net/weixin_39933082/article/details/111833663

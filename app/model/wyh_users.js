@@ -1,8 +1,9 @@
 /* indent size: 2 */
-
+const moment =  require('moment')
+const { Sequelize } = require('sequelize');
 module.exports = app => {
-
   const DataTypes = app.Sequelize;
+
   const Model = app.model.define('wyh_users', {
     user_id: {
       type: DataTypes.BIGINT,
@@ -16,7 +17,7 @@ module.exports = app => {
     },
     user_name: {
       type: DataTypes.STRING(20),
-      allowNull: true,
+      allowNull: true
     },
     user_password: {
       type: DataTypes.STRING(15),
@@ -38,10 +39,6 @@ module.exports = app => {
       type: DataTypes.STRING(20),
       allowNull: true
     },
-    user_registration_time: {
-      type: DataTypes.DATE,
-      allowNull: true
-    },
     user_birthday: {
       type: DataTypes.DATE,
       allowNull: true
@@ -57,11 +54,25 @@ module.exports = app => {
     user_nickname: {
       type: DataTypes.STRING(20),
       allowNull: true
+    },
+    create_time: {
+      type: DataTypes.TIME,
+      allowNull: true,
+      get () {
+        return this.getDataValue('create_time') ? moment(this.getDataValue('create_time')).format('YYYY-MM-DD HH:mm:ss') : null;
+      }
+    },
+    update_time: {
+      type: DataTypes.TIME,
+      allowNull: true,
+      defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'),
+      get () {
+        return this.getDataValue('create_time') ? moment(this.getDataValue('create_time')).format('YYYY-MM-DD HH:mm:ss') : null;
+      }
     }
   }, {
     tableName: 'wyh_users'
-  }
-  );
+  });
 
   Model.associate = function() {
 

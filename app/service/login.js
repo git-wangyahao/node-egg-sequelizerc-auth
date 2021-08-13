@@ -4,8 +4,10 @@ const Service = require('egg').Service;
 
 
 class Login extends Service {
-    async index(data) {
-         
+    async index(params) {
+        const { userName } = params
+        const ctx = this.ctx;
+        return await ctx.model.WyhUsers.findOne({ where: { user_name: userName } });
     }
 }
 
