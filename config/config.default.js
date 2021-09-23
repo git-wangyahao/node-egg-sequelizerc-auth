@@ -43,11 +43,11 @@ exports.swaggerdoc = {
 // 数据库配置信息。
 exports.sequelize = {
   dialect: 'mysql',   // 数据库类型，支持 mysql，sqlite,mssql,pgsql,oracle。
-  host: "115.159.214.162",  // 数据库服务器地址。
+  host: "xxxxxxx",  // 数据库服务器地址。
   port: 3306, // 数据库连接端口号。
-  database: "blob", // 数据库名称。
-  username: "root",   // 数据库登录用户名。
-  password: "WingTech1@3",   // 数据库登录密码。
+  database: "xxxxxxx", // 数据库名称。
+  username: "xxxxxxx",   // 数据库登录用户名。
+  password: "xxxxxxx",   // 数据库登录密码。
   define: {
       // freezeTableName: true, // Model 对应的表名将与model名相同。
       cameCased: true,
